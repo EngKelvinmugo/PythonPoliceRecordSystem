@@ -14,12 +14,23 @@
 		href="{% static 'css/dashboard.css' %}">
 	<link rel="stylesheet"
 		href="{% static 'css/dashboard2.css' %}">
+		<style>
+.Logout{
+text-decoration: none;
+
+color:black;
+
+}
+
+
+		</style>
 </head>
 
 <body>
 
 	<!-- for header part -->
 	<header>
+		
 
 		<div class="logosec">
 			<div class="logo">Service to all</div>
@@ -47,7 +58,10 @@
 "https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png"
 				class="icn"
 				alt="">
+				<p><b>Hello, {{request.user}}!</b></p>
+				
 			<div class="dp">
+				
 			<img src=
 "https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
 					class="dpicn"
@@ -74,7 +88,7 @@
 "https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png"
 							class="nav-img"
 							alt="articles">
-						<h3> Report</h3>
+						<a class="Logout" href="{%url 'report'%} "><h3> Report</h3></a>
 					</div>
 
 					<div class="nav-option option3">
@@ -82,7 +96,7 @@
 "https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png"
 							class="nav-img"
 							alt="report">
-						<h3> Criminals</h3>
+							<a class="Logout" href="{%url 'criminal'%} "><h3> Criminals</h3></a>	
 					</div>
 
 					<div class="nav-option option4">
@@ -90,7 +104,7 @@
 "https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png"
 							class="nav-img"
 							alt="institution">
-						<h3> Law </h3>
+							<a class="Logout" href="{%url 'institution'%} "><h3> Institution</h3></a>	
 					</div>
 
 					<div class="nav-option option5">
@@ -98,7 +112,7 @@
 "https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png"
 							class="nav-img"
 							alt="blog">
-						<h3> Profile</h3>
+							<a class="Logout" href="{%url 'law'%} "><h3> Law</h3></a>	
 					</div>
 
 					<div class="nav-option option6">
@@ -114,7 +128,7 @@
 "https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png"
 							class="nav-img"
 							alt="logout">
-						<h3>Logout</h3>
+						<a class="Logout" href="{%url 'logout'%} "><h3>Logout</h3></a>
 					</div>
 
 				</div>
@@ -196,20 +210,24 @@
 					</div>
 
 					<div class="items">
+			<!--	{% for p in crimes %}  	
 						<div class="item1">
-							<h3 class="t-op-nextlvl">Robbery </h3>
-							<h3 class="t-op-nextlvl">Douglas Kinyua</h3>
-							<h3 class="t-op-nextlvl">Kirinyaga</h3>
+						
+							<h3 class="t-op-nextlvl">{{offense.crime}}</h3>
+							<h3 class="t-op-nextlvl">{{offense.criminal}}</h3>
+							<h3 class="t-op-nextlvl">{{offense.county}}</h3>
+							<h3 class="t-op-nextlvl lavel-tag">{{offense.status}}</h3>
+						</div>
+  {% endfor %} -->
+						{% for crime in crimes %}
+						<div class="item1">
+							<h3 class="t-op-nextlvl">{{ crime.crime}}</h3>
+							<h3 class="t-op-nextlvl">{{ crime.criminal }}</h3>
+							<h3 class="t-op-nextlvl">{{ crime.county}}</h3>
 							<h3 class="t-op-nextlvl lavel-tag">Punished</h3>
 						</div>
-
-						<div class="item1">
-							<h3 class="t-op-nextlvl">Car theft</h3>
-							<h3 class="t-op-nextlvl">Peter Ndungu'u</h3>
-							<h3 class="t-op-nextlvl">Nakuru</h3>
-							<h3 class="t-op-nextlvl lavel-tag">Punished</h3>
-						</div>
-
+						{% endfor %}
+<!--      
 						<div class="item1">
 							<h3 class="t-op-nextlvl">Corruption</h3>
 							<h3 class="t-op-nextlvl">Daniel Munyua</h3>
@@ -258,7 +276,7 @@
 							<h3 class="t-op-nextlvl">Nakuru</h3>
 							<h3 class="t-op-nextlvl lavel-tag">Punished</h3>
 						</div>
-
+					-->
 					</div>
 				</div>
 			</div>
@@ -266,5 +284,15 @@
 	</div>
 
 	<script src="/static/js/index.js"></script>
+	<script>
+		let menuicn = document.querySelector(".menuicn");
+		let nav = document.querySelector(".navcontainer");
+		
+		menuicn.addEventListener("click",()=>
+		{
+			nav.classList.toggle("navclose");
+		})
+		</script>
+		
 </body>
 </html>

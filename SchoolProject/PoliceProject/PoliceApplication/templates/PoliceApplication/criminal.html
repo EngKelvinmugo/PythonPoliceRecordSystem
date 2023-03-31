@@ -1,4 +1,5 @@
-{% load static%}
+{% load static %}  
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,87 +7,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>National Security Organs</title>
-<link href="{% static 'css/criminal.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-  <div class="gallery">
-    <a target="_blank" href="img_forest.jpg">
-      <img src="https://mondeamour.com/wp-content/uploads/2017/10/1.jpeg" alt="Forest" width="60%" height="40%">
-    </a>
-    <div class="desc">Most Wanted Criminals</div>
-  </div>
+    
   
-  <div class="gallery">
-    <a target="_blank" href="img_lights.jpg">
-      <img src="https://mondeamour.com/wp-content/uploads/2017/10/2.jpeg" alt="Northern Lights" width="60%" height="40%">
-    </a>
-    <div class="desc">Most Wanted Criminals</div>
-  </div>
+    <!-- body -->
+    <div class="container-fluid mt-3">
+        <div class="row">
+    
+    
+            <!-- filter -->
+    
+            <div class="col-lg-3 mx-auto">
+                <div class="list-group">
+                
+                   
+    
+                    <a href="{% url 'criminal' %}" class="list-group-item list-group-item-action btn btn-outline-success">All Criminals</a>
+    
+                    
+                    <a href="{% url 'criminal' %}"
+                        class="list-group-item list-group-item-action btn btn-outline-success ">Most Wanted Criminals</a>
+                
+                        <a href="{% url 'criminal' %}"
+                        class="list-group-item list-group-item-action btn btn-outline-success ">International Criminals</a>
+               
+                        
+                    <a href="{% url 'criminal' %}"
+                    class="list-group-item list-group-item-action btn btn-outline-success ">National Criminals</a>
+           
+                    
+                    <a href="{% url 'criminal' %}"
+                        class="list-group-item list-group-item-action btn btn-outline-success ">Terrorists</a>
+               
+                        
+                    <a href="{% url 'criminal' %}"
+                    class="list-group-item list-group-item-action btn btn-outline-success ">Psycopaths</a>
+           
+                   
+                       
+                   
+                </div>
+            </div>
     
 
-  
-  
-  <div class="gallery">
-    <a target="_blank" href="img_lights.jpg">
-      <img src="https://qph.cf2.quoracdn.net/main-qimg-d6af88eaced04028e668c8e5573cba08-lq" alt="Northern Lights" width="60%" height="40%">
-    </a>
-    <div class="desc">Most Wanted Criminals</div>
-  </div>
-  
- 
-  
-  
-  
 
-  <div class="gallery">
-    <a target="_blank" href="">
-      <img src="https://do.lolwot.com/wp-content/uploads/2015/11/10-of-the-hottest-female-criminals-ever-1.jpg" alt="Cinque Terre" width="60%" height="40%">
-    </a>
-    <div class="desc">Most Wanted Criminals</div>
-  </div>
-  
-  
-  <div class="gallery">
-    <a target="_blank" href="">
-      <img src="https://qph.cf2.quoracdn.net/main-qimg-c943d3a08bad2db04872eccd893e40e6-lq" alt="Cinque Terre" width="60%" height="40%">
-    </a>
-    <div class="desc">Most Wanted Criminals</div>
-  </div>
-  <div class="gallery">
-    <a target="_blank" href="">
-      <img src="https://cropper.watch.aetnd.com/cdn.watch.aetnd.com/sites/4/2018/05/liquorstoretattoo.jpg?w=548" alt="Forest" width="60%" height="150%">
-    </a>
-    <div class="desc">Most Wanted Criminals</div>
-  </div>
-  <div class="gallery">
-    <a target="_blank" href="img_forest.jpg">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPNyaSdC0n5OyO16fusKv-ecm2h2qMJo-0i43cpJ75lySxXiT3pTdn6SUqUZVQglJfZVc&usqp=CAU" alt="Forest" width="60%" height="40%">
-    </a>
-    <div class="desc">Most Wanted Criminals</div>
-  </div>
-  
-  
- 
-  <div class="gallery">
-    <a target="_blank" href="">
-      <img src="https://nypost.com/wp-content/uploads/sites/2/2014/09/stc3a9phanie-boudoin-feature.jpg?quality=75&strip=all&w=744" alt="Mountains" width="60%" height="40%">
-    </a>
-    <div class="desc">Most Wanted Criminals</div>
-  </div>
-  <div class="gallery">
-    <a target="_blank" href="">
-      <img src="https://www.palomar.edu/telescope/wp-content/uploads/2014/12/hotcriminal.jpg" alt="Cinque Terre" width="60%" height="40%">
-    </a>
-    <div class="desc">Most Wanted Criminals</div>
-  </div>
-  
-   <div class="gallery">
-    <a target="_blank" href="">
-      <img src="https://www.inkedmag.com/.image/t_share/MTU5NTgyNTQyMTMwMTI4NDcy/sept9201156.jpg" alt="Mountains" width="60%" height="40%">
-    </a>
-    <div class="desc">Most Wanted Criminals</div>
-  </div>
 
-  </body>
+
+
+
+<div id='products' class="col-lg-9 mx-auto">
+    <div class="row mx-auto" >
+        
+{% for p in criminals %}
+
+        <div class="card mx-auto mb-3" style="width: 18rem;">
+            <img class="card-img-top" src="{{p.image.url}}" alt="Card image cap">
+            <div class="card-body">
+                <p class="card-title">{{p.name}}</p>
+                <p class="card-text"><b>{{p.crime}}</b></p>
+           
+            </div>
+            
+      
+            </div>
+
+            {% endfor %}
+            </div>
+            </div>
+
+                  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                  crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                  crossorigin="anonymous"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                  crossorigin="anonymous"></script>
 </body>
 </html>

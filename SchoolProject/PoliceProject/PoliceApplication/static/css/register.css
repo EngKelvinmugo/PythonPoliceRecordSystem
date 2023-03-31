@@ -1,19 +1,9 @@
-.login {
+.register {
     font-family: 'Poppins', sans-serif;
   
 }
-.login h2{
-    color: rgb(64, 201, 201);
-}
 
-.login .message {
-    background-color: rgb(187, 224, 187);
-    border-radius: 7px;
-    padding: 5px 8px;
-}
-
-
-.login a {
+.register a {
     font-size: 18px;
     text-decoration: none;
     color: #fff;
@@ -23,24 +13,21 @@
     padding: 2px 4px;
 }
 
+.register h2{
+    color: rgb(64, 201, 201);
+}
 
 
-.login .container {
+.register .container {
     width: 75%;
     margin: 0 auto;
     display: flex;
     height: 100vh;
     align-items: center;
     justify-content: center;
-    background-color: transparent;
-    border-radius: 20px;
-    box-sizing: border-box;
-    height: 600px;
-    padding: 20px;
-    width: 450px;
 }
 
-.login .login-container {
+.register .register-container {
     display: flex;
     align-items: center;
     gap: 15px;
@@ -49,7 +36,7 @@
 }
 
 
-.login .login-image img {
+.register .register-image img {
     width: 500px;
     height: auto;
 }
@@ -83,7 +70,7 @@
     padding: 0 20px;
 }
 
-.inputs .form .login input {
+.inputs .form .register input {
     margin-top: 20px;
     width: 200px;
     height: 35px;
@@ -95,7 +82,7 @@
     color: #fff;
 }
 
-.inputs .form .login input:hover {
+.inputs .form .register input:hover {
     background-color: rgb(9, 80, 99);
     transition: 0.4s ease;
 }
@@ -103,11 +90,11 @@
 
 
 @media screen and (max-width: 500px) {
-    .login .container {
+    .register .container {
         height: 70vh;
        
     }
-    .login .login-image{
+    .register .register-image{
         display: none;
     }
     .inputs  .form .email input {
@@ -122,9 +109,18 @@
         width: 260px;
     }
 
-    .inputs  .form .login input {
+    .inputs  .form .register input {
         width: 260px;
     }
+}
+
+.registration_form {
+	height: 600px;
+	width: 500px;
+	box-shadow: 10px 10px 30px rgb(254, 215, 188);
+	border-radius: 50px;
+	border-color: aqua;
+    border-style: solid;
 }
 body {
 	height: 100vh;

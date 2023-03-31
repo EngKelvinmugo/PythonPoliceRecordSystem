@@ -12,7 +12,10 @@ urlpatterns = [
     path('contact/',views.contact,name='contact'),
     path('about/',views.about,name='about'),
     path('services/',views.services,name='services'),
-    
+    path('report/',views.report,name='report'),
+    path('criminal/',views.wanted,name='criminal'),
+     path('law/',views.law,name='law'),
+      path('institution/',views.institution,name='institution'),
     
 ]
 

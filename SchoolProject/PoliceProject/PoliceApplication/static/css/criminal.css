@@ -1,21 +1,62 @@
-div.gallery {
-    margin: 5px;
-    border: 1px solid #ccc;
-    float: left;
-    width: 180px;
-  }
-  
-  div.gallery:hover {
-    border: 1px solid #777;
-  }
-  
-  div.gallery img {
-    width: 100%;
-    height: auto;
-  }
-  
-  div.desc {
-    padding: 15px;
-    text-align: center;
-  }
+.header{
+	background-color:transparent;
+	border:none;
+	color:white;
+	text-align:center;
+	padding:25px;
+	
+}
+
+.kratos{
+ border:3px solid rgb(20, 5, 104);
+ background-color:rgb(20, 5, 104);
+ color:white;
+ padding:14px;
+
+ align-content:center;
+ text-align: justify;
+
+} 
+	 
  
+ 
+.graph{
+ background-image:url("../img/graph2.png");
+ background-repeat:no-repeat;
+ background-size:cover;
+ background-attachment:scroll;
+ background-position:absolute;
+ width:100%;
+ height:500px;
+ border:none;
+ justify-content:center;
+
+}
+
+div.gallery{
+ margin:5px;
+ float:left;
+ border:1px solid black;
+ width:300px;
+}
+div.gallery:hover{
+ border:1px solid #777;
+}
+div.gallery img{
+ width:100%;
+ height:auto;
+}
+h{
+ text-align: center;
+}
+body{
+ background-color: rgb(20, 5, 104);
+ width:100%;
+}
+.header2{
+ background-color:transparent;
+ padding:20px;
+ text-align:center;
+ color:rgb(241, 212, 212);
+ text-decoration: none;
+}

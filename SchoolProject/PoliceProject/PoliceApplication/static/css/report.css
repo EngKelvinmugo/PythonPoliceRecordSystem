@@ -1,6 +1,6 @@
 body {
     align-items: center;
-    background-image: url("https://static.euronews.com/articles/53/99/539911/1024x576_bonus-twotwo.jpg");
+    background-image: url("../img/1024x576_bonus-twotwo.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -10,120 +10,126 @@ body {
     height: 100vh;
   }
   
-  .form {
-    background-color: #15172b;
-    border-radius: 20px;
-    box-sizing: border-box;
-    height: 500px;
-    padding: 20px;
-    width: 320px;
-  }
+  .register {
+    font-family: 'Poppins', sans-serif;
   
-  .title {
-    color: #eee;
-    font-family: sans-serif;
-    font-size: 36px;
-    font-weight: 600;
-    margin-top: 30px;
-  }
-  
-  .subtitle {
-    color: #eee;
-    font-family: sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 10px;
-  }
-  
-  .input-container {
-    height: 50px;
-    position: relative;
-    width: 100%;
-  }
-  
-  .ic1 {
-    margin-top: 40px;
-  }
-  
-  .ic2 {
-    margin-top: 30px;
-  }
-  
-  .input {
-    background-color: #303245;
-    border-radius: 12px;
-    border: 0;
-    box-sizing: border-box;
-    color: #eee;
+}
+
+.register a {
     font-size: 18px;
-    height: 100%;
-    outline: 0;
-    padding: 4px 20px 0;
-    width: 100%;
-  }
-  
-  .cut {
-    background-color: #15172b;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgb(9, 80, 99);
+    border: none;
+    border-radius: 7px;
+    padding: 2px 4px;
+}
+
+.register h2{
+    color: rgb(64, 201, 201);
+}
+
+
+.register .container {
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.register .register-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+   height: 100%;
+    
+}
+
+
+.register .register-image img {
+    width: 500px;
+    height: auto;
+}
+
+ .inputs  .form .email input {
+    width: 350px;
+    height: 35px;
     border-radius: 10px;
-    height: 20px;
-    left: 20px;
-    position: absolute;
-    top: -20px;
-    transform: translateY(0);
-    transition: transform 200ms;
-    width: 76px;
-  }
-  
-  .cut-short {
-    width: 50px;
-  }
-  
-  .input:focus ~ .cut,
-  .input:not(:placeholder-shown) ~ .cut {
-    transform: translateY(8px);
-  }
-  
-  .placeholder {
-    color: #65657b;
-    font-family: sans-serif;
-    left: 20px;
-    line-height: 14px;
-    pointer-events: none;
-    position: absolute;
-    transform-origin: 0 50%;
-    transition: transform 200ms, color 200ms;
-    top: 20px;
-  }
-  
-  .input:focus ~ .placeholder,
-  .input:not(:placeholder-shown) ~ .placeholder {
-    transform: translateY(-30px) translateX(10px) scale(0.75);
-  }
-  
-  .input:not(:placeholder-shown) ~ .placeholder {
-    color: #808097;
-  }
-  
-  .input:focus ~ .placeholder {
-    color: #dc2f55;
-  }
-  
-  .submit {
-    background-color: #08d;
-    border-radius: 12px;
-    border: 0;
-    box-sizing: border-box;
-    color: #eee;
-    cursor: pointer;
-    font-size: 18px;
-    height: 50px;
+    border: 1px solid grey;
+    outline: none;
+    padding: 0 20px;
+}
+
+
+.inputs  .form .username input {
+    width: 350px;
+    height: 35px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    outline: none;
+    padding: 0 20px;
+}
+
+
+.inputs  .form .password input {
+    width: 350px;
+    height: 35px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    outline: none;
+    padding: 0 20px;
+}
+
+.inputs .form .register input {
     margin-top: 20px;
-    // outline: 0;
-    text-align: center;
-    width: 100%;
-  }
-  
-  .submit:active {
-    background-color: #06b;
-  }
-  
+    width: 200px;
+    height: 35px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(80, 222, 222);
+    cursor: pointer;
+    font-weight: 800;
+    color: #fff;
+}
+
+.inputs .form .register input:hover {
+    background-color: rgb(9, 80, 99);
+    transition: 0.4s ease;
+}
+
+
+
+@media screen and (max-width: 500px) {
+    .register .container {
+        height: 70vh;
+       
+    }
+    .register .register-image{
+        display: none;
+    }
+    .inputs  .form .email input {
+        width: 260px;
+    }
+
+    .inputs  .form .username input{
+        width: 260px;
+    }
+
+    .inputs  .form .password input {
+        width: 260px;
+    }
+
+    .inputs  .form .register input {
+        width: 260px;
+    }
+}
+.registration-form{
+  background-color: #dfe0e9;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 600px;
+  padding: 20px;
+  width: 450px;
+}
